@@ -13,6 +13,8 @@ import About from "./Pages/About";
 import MainLayout from "./Layout/MainLayout";
 import Home from "./Pages/Home";
 import ProductDetails from "./Pages/ProductDetails";
+import Contact from "./Pages/Contact";
+import Errorpage from "./Pages/ErrorPage";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
               {/* <Route path="productdetails" element={<ProductDetails />} /> */}
             </Route>
             <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<Errorpage />} />
           </Route>
         </Routes>
       </BrowserRouter>

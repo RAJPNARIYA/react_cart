@@ -14,7 +14,7 @@ function CategoryCard(props) {
         <div class="card bg-dark text-white">
           <img src={props.image} class="card-img cat-img" alt="Category" />
           <div class="card-img-overlay text-box-center">
-            <h3 class="card-title">{props.name}</h3>
+            <h2 class="card-title">{props.name}</h2>
             <h5 class="card-text">Get The Look </h5>
           </div>
         </div>

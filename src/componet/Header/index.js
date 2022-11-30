@@ -18,15 +18,6 @@ import App from "../../App";
 function Header() {
   return (
     <>
-      {/* <Router>
-        <Routes>
-          <Route path={Header} element={<Header />} />
-          <Route path={Slider} element={<Slider />}>
-            <Route path={Footer} element={<Footer />} />
-          </Route>
-        </Routes>
-      </Router> */}
-      {/* <Router> */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <a className="navbar-brand" href="#">
@@ -47,31 +38,21 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                {/* <Link className="nav-link active" aria-current="page" to="/">
+                <NavLink className="nav-link" to="home">
                   Home
-                </Link> */}
-
-                <Link className="nav-link" to="home">
-                  Home
-                </Link>
-
-                {/* <Link className="nav-link active" to="/Slider/Footer">
-                  SF
-                </Link> */}
+                </NavLink>
               </li>
 
               <li className="nav-item">
-                {/* <Link className="nav-link active" aria-current="page" to="/">
-                  Home
-                </Link> */}
-
-                <Link className="nav-link" to="about">
+                <NavLink className="nav-link" to="about">
                   About us
-                </Link>
+                </NavLink>
+              </li>
 
-                {/* <Link className="nav-link active" to="/Slider/Footer">
-                  SF
-                </Link> */}
+              <li className="nav-item">
+                <NavLink className="nav-link" to="contact">
+                  Contact
+                </NavLink>
               </li>
 
               <li className="nav-item dropdown">
@@ -87,12 +68,9 @@ function Header() {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    {/* <Link className="dropdown-item" to="/MenCasualShoe">
+                    <NavLink className="dropdown-item" to="error">
                       Men's Casual Shoes
-                    </Link> */}
-                    <a className="dropdown-item" href="#">
-                      Men's Casual Shoes
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
@@ -151,7 +129,6 @@ function Header() {
           </div>
         </div>
       </nav>
-      {/* </Router> */}
     </>
   );
 }

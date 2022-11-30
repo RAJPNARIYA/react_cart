@@ -13,7 +13,13 @@
 .text-box-center {
   top: 70% !important;
   text-align: center;
-  color: rgb(130, 0, 0);
+  color: rgb(0, 128, 255);
+  font-weight: 800;
+}
+
+.text-box-center:hover {
+  color: rgb(255, 0, 0);
+  cursor: pointer;
 }
 
 .img-center {
@@ -98,16 +104,6 @@
 
 .cat-img {
   height: 400px;
-}
-
-.card-hover {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
-  position: relative;
-  z-index: 0;
 }
 
 @media screen and (max-width: 480px) {

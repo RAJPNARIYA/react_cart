@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import product from "../images/sport-2.jpg";
 
 function ProductCard(props) {
@@ -12,14 +12,14 @@ function ProductCard(props) {
             alt="ProductImg"
             height="300px"
           />
-
           <div className="card-body text-center">
             <h3 className="card-title">{props.name}</h3>
             <p className="card-text">{props.price}</p>
             <br />
-            <button className="btn bg-info" to="productdetails">
+            <NavLink className="btn bg-info" to="productdetails">
               View Details
-            </button>
+            </NavLink>
+            <Outlet />
             <br />
             <button className="btn bg-warning m-2">Add To Cart</button>
           </div>
