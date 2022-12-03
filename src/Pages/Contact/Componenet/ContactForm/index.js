@@ -1,65 +1,110 @@
-import React from "react";
+import { upload } from "@testing-library/user-event/dist/upload";
+import React, { useState } from "react";
 import Getintouch from "../.././../../asset/images/getintouch.png";
 
 export default function Contactform() {
+  console.log("in main form");
+  const startData = {
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    zipcode: "",
+    message: "",
+  };
+  const [formData, UpdateFormData] = useState(startData);
+  const [isThanksMessage, setThanksMessage] = useState(false);
+
+  const Formfield = [
+    {
+      label: "Name",
+      name: "name",
+      value: formData.name,
+    },
+    {
+      label: "Email",
+      name: "email",
+      value: formData.email,
+    },
+    {
+      label: "Address",
+      name: "address",
+      value: formData.address,
+    },
+    {
+      label: "City",
+      name: "city",
+      value: formData.city,
+    },
+    {
+      label: "Zipcode",
+      name: "zipcode",
+      value: formData.zipcode,
+    },
+    {
+      label: "Message",
+      name: "message",
+      value: formData.message,
+    },
+  ];
+
+  function changeEvent(e) {
+    UpdateFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    console.log("in Onchange");
+  }
+
+  function submitEvent(e) {
+    e.preventDefault();
+    console.log(formData);
+    setThanksMessage(!isThanksMessage);
+    UpdateFormData({
+      ...startData,
+    });
+    // setThanksMessage(!isThanksMessage);
+    console.log("inn onclick");
+  }
+
   return (
     <>
-      <h1 className="text-center">For Enquiry Fill This Form</h1>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src={Getintouch} class="img-fluid rounded-start" alt="..." />
+      <div className="card mb-3">
+        <div className="row g-0">
+          <div className="col-md-4">
+            <img
+              src={Getintouch}
+              className="img-fluid rounded-start"
+              alt="..."
+            />
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <form class="row g-3">
-                <div class="col-md-6">
-                  <label for="inputEmail4" class="form-label">
-                    Name:
-                  </label>
-                  <input type="text" class="form-control" id="inputEmail4" />
-                </div>
-                <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label">
-                    Email:
-                  </label>
+          <div className="col-md-8">
+            <div className="card-body">
+              <form className="row g-3">
+                {Formfield.map((f) => (
+                  <div className="col-md-6">
+                    <label htmlFor="inputEmail4" className="form-label">
+                      {f.label}
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name={f.name}
+                      value={f.value}
+                      onChange={changeEvent}
+                    />
+                  </div>
+                ))}
+
+                <div className="col-12">
                   <input
-                    type="email"
-                    class="form-control"
-                    id="inputPassword4"
+                    type="submit"
+                    className="btn btn-primary"
+                    value="Submit"
+                    onClick={submitEvent}
                   />
                 </div>
-                <div class="col-12">
-                  <label for="inputAddress" class="form-label">
-                    Address:
-                  </label>
-                  <input type="text" class="form-control" id="inputAddress" />
-                </div>
-                <div class="col-md-6">
-                  <label for="inputCity" class="form-label">
-                    City:
-                  </label>
-                  <input type="text" class="form-control" id="inputCity" />
-                </div>
-
-                <div class="col-md-6">
-                  <label for="inputZip" class="form-label">
-                    Zip:
-                  </label>
-                  <input type="text" class="form-control" id="inputZip" />
-                </div>
-
-                <div class="col-12">
-                  <label for="inputAddress" class="form-label">
-                    Message:
-                  </label>
-                  <textarea class="form-control" id="inputAddress" rows="4" />
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary">
-                    Submit
-                  </button>
-                </div>
+                {isThanksMessage && <p>Your Enquiry send successfully.</p>}
               </form>
             </div>
           </div>

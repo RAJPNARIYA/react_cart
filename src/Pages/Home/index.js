@@ -22,105 +22,107 @@ import brand5 from "../../asset/images/reebok.png";
 import brand6 from "../../asset/images/merrell.jpg";
 import Header from "../../componet/Header";
 import { Outlet } from "react-router-dom";
+import Footer from "../../componet/Footer";
+import Contact from "../Contact";
+import Contactform from "../Contact/Componenet/ContactForm";
 
-export default function Home() {
-  const categoryList = [
-    {
-      cat_id: 1,
-      name: "Men",
-      image: CatMen,
-    },
-    {
-      cat_id: 2,
-      name: "Women",
-      image: CatWomen,
-    },
-  ];
+const categoryList = [
+  {
+    cat_id: 1,
+    name: "Men",
+    image: CatMen,
+  },
+  {
+    cat_id: 2,
+    name: "Women",
+    image: CatWomen,
+  },
+];
 
-  const productList = [
-    {
-      product_id: 1,
-      product_name: "SportShoe",
-      product_img: sport1,
-      product_price: "$200",
-    },
-    {
-      product_id: 2,
-      product_name: "CasualShoe",
-      product_img: c1,
-      product_price: "$200",
-    },
-    {
-      product_id: 3,
-      product_name: "formalShoe",
-      product_img: f1,
-      product_price: "$200",
-    },
-    {
-      product_id: 4,
-      product_name: "Heels",
-      product_img: h1,
-      product_price: "$200",
-    },
-    {
-      product_id: 5,
-      product_name: "SportShoe",
-      product_img: sport2,
-      product_price: "$200",
-    },
-    {
-      product_id: 6,
-      product_name: "CasualShoe",
-      product_img: c2,
-      product_price: "$200",
-    },
-    {
-      product_id: 7,
-      product_name: "SportShoe",
-      product_img: sport3,
-      product_price: "$200",
-    },
-    {
-      product_id: 8,
-      product_name: "CasualShoe",
-      product_img: c3,
-      product_price: "$200",
-    },
-  ];
+const productList = [
+  {
+    product_id: 1,
+    product_name: "SportShoe",
+    product_img: sport1,
+    product_price: "$200",
+  },
+  {
+    product_id: 2,
+    product_name: "CasualShoe",
+    product_img: c1,
+    product_price: "$200",
+  },
+  {
+    product_id: 3,
+    product_name: "formalShoe",
+    product_img: f1,
+    product_price: "$200",
+  },
+  {
+    product_id: 4,
+    product_name: "Heels",
+    product_img: h1,
+    product_price: "$200",
+  },
+  {
+    product_id: 5,
+    product_name: "SportShoe",
+    product_img: sport2,
+    product_price: "$200",
+  },
+  {
+    product_id: 6,
+    product_name: "CasualShoe",
+    product_img: c2,
+    product_price: "$200",
+  },
+  {
+    product_id: 7,
+    product_name: "SportShoe",
+    product_img: sport3,
+    product_price: "$200",
+  },
+  {
+    product_id: 8,
+    product_name: "CasualShoe",
+    product_img: c3,
+    product_price: "$200",
+  },
+];
 
-  const brandList = [
-    {
-      brand_id: 1,
-      brand_name: "nike",
-      brand_img: brand1,
-    },
-    {
-      brand_id: 1,
-      brand_name: "addidas",
-      brand_img: brand2,
-    },
-    {
-      brand_id: 1,
-      brand_name: "gucci",
-      brand_img: brand3,
-    },
-    {
-      brand_id: 1,
-      brand_name: "puma",
-      brand_img: brand4,
-    },
-    {
-      brand_id: 1,
-      brand_name: "reebok",
-      brand_img: brand5,
-    },
-    {
-      brand_id: 1,
-      brand_name: "merrell",
-      brand_img: brand6,
-    },
-  ];
-
+const brandList = [
+  {
+    brand_id: 1,
+    brand_name: "nike",
+    brand_img: brand1,
+  },
+  {
+    brand_id: 1,
+    brand_name: "addidas",
+    brand_img: brand2,
+  },
+  {
+    brand_id: 1,
+    brand_name: "gucci",
+    brand_img: brand3,
+  },
+  {
+    brand_id: 1,
+    brand_name: "puma",
+    brand_img: brand4,
+  },
+  {
+    brand_id: 1,
+    brand_name: "reebok",
+    brand_img: brand5,
+  },
+  {
+    brand_id: 1,
+    brand_name: "merrell",
+    brand_img: brand6,
+  },
+];
+function Home() {
   return (
     <>
       <Content>
@@ -128,25 +130,55 @@ export default function Home() {
 
         <div className="row row-col-1  g-4 m-2">
           {categoryList.map((i) => (
-            <CategoryCard key={i.cat_id} name={i.name} image={i.image} />
+            <CategoryCard id={i.cat_id} name={i.name} image={i.image} />
           ))}
         </div>
-        <div className="row row-cols-1 row-cols-md-4 g-4 m-2">
-          {productList.map((p) => (
-            <ProductCard
-              key={p.product_id}
-              name={p.product_name}
-              image={p.product_img}
-              price={p.product_price}
-            />
-          ))}
+        <div>
+          <h1 className="heading text-center">
+            <span>B</span>
+            <span>E</span>
+            <span>S</span>
+            <span>T</span>
+            <span>-</span>
+            <span>S</span>
+            <span>E</span>
+            <span>L</span>
+            <span>L</span>
+            <span>E</span>
+            <span>R</span>
+          </h1>
+          <div className="row row-cols-1 row-cols-md-4 g-4 m-2">
+            {productList.map((p) => (
+              <ProductCard
+                id={p.product_id}
+                name={p.product_name}
+                image={p.product_img}
+                price={p.product_price}
+              />
+            ))}
+          </div>
         </div>
+        <div>
+          <h1 className="heading text-center">
+            <span>C</span>
+            <span>O</span>
+            <span>N</span>
+            <span>T</span>
+            <span>A</span>
+            <span>C</span>
+            <span>T</span>
+          </h1>
+          <Contactform />
+        </div>
+
         <div className="row m-5">
           {brandList.map((b) => (
-            <Brand key={b.brand_id} image={b.brand_img} name={b.brand_name} />
+            <Brand id={b.brand_id} image={b.brand_img} name={b.brand_name} />
           ))}
         </div>
       </Content>
     </>
   );
 }
+
+export { Home, productList };

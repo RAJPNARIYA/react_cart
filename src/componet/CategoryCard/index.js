@@ -11,34 +11,14 @@ function CategoryCard(props) {
   return (
     <>
       <div className="col">
-        <div class="card bg-dark text-white">
-          <img src={props.image} class="card-img cat-img" alt="Category" />
-          <div class="card-img-overlay text-box-center">
-            <h2 class="card-title">{props.name}</h2>
-            <h5 class="card-text">Get The Look </h5>
+        <div className="card bg-dark text-white">
+          <img src={props.image} className="card-img cat-img" alt="Category" />
+          <div className="card-img-overlay text-box-center">
+            <h2 className="card-title">{props.name}</h2>
+            <h5 className="card-text">Get The Look </h5>
           </div>
         </div>
       </div>
-
-      {/* <div className="col">
-        <div className="card">
-          <img
-            src={props.image}
-            className="card-img-top"
-            alt="Category"
-            height="500px"
-          />
-           <img src={imageName} className="card-img-top" alt="Category" /> 
-
-          <div className="card-body text-center">
-            {/* <h5 className="card-title">{props.categoryName}</h5> */}
-      {/* <h5 className="card-title">{props.name}</h5>
-            <a>
-              Get The Look<i className="fa fa-angle-right"></i>
-            </a>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 }

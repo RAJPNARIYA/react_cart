@@ -5,25 +5,24 @@ function ProductCard(props) {
   return (
     <>
       <div className="col">
-        <div className="card">
+        <div className="card container border-0">
           <img
             src={props.image}
             className="card-img-top"
             alt="ProductImg"
             height="300px"
           />
-          <div className="card-body text-center">
-            <h3 className="card-title">{props.name}</h3>
-            <p className="card-text">{props.price}</p>
-            <br />
-            <NavLink className="btn bg-info" to="productdetails">
+          <div className="card-body text-center middle">
+            <NavLink className="btn bg-info  btn-centers" to="productdetails">
               View Details
             </NavLink>
-            <Outlet />
             <br />
+
             <button className="btn bg-warning m-2">Add To Cart</button>
           </div>
         </div>
+        <h3 className="card-title text-center">{props.name}</h3>
+        <p className="card-text text-center">{props.price}</p>
       </div>
     </>
   );

@@ -11,10 +11,11 @@ import "../src/asset/css/style.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./Pages/About";
 import MainLayout from "./Layout/MainLayout";
-import Home from "./Pages/Home";
+import { Home } from "./Pages/Home";
 import ProductDetails from "./Pages/ProductDetails";
 import Contact from "./Pages/Contact";
 import Errorpage from "./Pages/ErrorPage";
+import Men from "./Pages/Men";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             </Route>
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="men" element={<Men />} />
             <Route path="*" element={<Errorpage />} />
           </Route>
         </Routes>

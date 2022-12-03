@@ -10,17 +10,17 @@ export default function Service() {
     <>
       <h1 class="heading text-center">
         <span>O</span>
-        <span>u</span>
-        <span>r</span>
+        <span>U</span>
+        <span>R</span>
         <span className="space"></span>
         <span>S</span>
-        <span>e</span>
-        <span>r</span>
-        <span>v</span>
-        <span>i</span>
-        <span>c</span>
-        <span>e</span>
-        <span>s</span>
+        <span>E</span>
+        <span>R</span>
+        <span>V</span>
+        <span>I</span>
+        <span>C</span>
+        <span>E</span>
+        <span>S</span>
       </h1>
 
       <div class="card mb-3 mt-3 border-0" style={{ maxWidth: "740px" }}>

@@ -68,7 +68,7 @@ function Header() {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <NavLink className="dropdown-item" to="error">
+                    <NavLink className="dropdown-item" to="men">
                       Men's Casual Shoes
                     </NavLink>
                   </li>
